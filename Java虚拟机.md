@@ -201,6 +201,15 @@ G1收集器的运作过程大致可划分为以下四个步骤：
 解析（将符号引用替换为直接引用。类和接口、类方法、接口方法、字段等解析）
 初始化
 
+注意：类可以被加载但不链接（验证，准备，解析）和初始化
+https://www.cnblogs.com/hujinshui/p/10422521.html
+https://blog.csdn.net/qq_34092585/article/details/93643847
+
+类加载全过程参考
+参考 https://www.cnblogs.com/xiaoxian1369/p/5498817.html
+
+
+
 #### 17.说下有哪些类加载器？
 
 Bootstrap ClassLoader（启动类加载器）
