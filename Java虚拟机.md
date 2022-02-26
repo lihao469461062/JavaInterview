@@ -287,6 +287,7 @@ App ClassLoader（应用类加载器）
 #### 20.Tomcat是怎么打破双亲委派机制的呢？
 
 是通过重写ClassLoader#loadClass和ClassLoader#findClass 实现的。可以看图中的WebAppClassLoader，它加载自己目录下的.class文件，并不会传递给父类的加载器。但是，它却可以使用 SharedClassLoader 所加载的类，实现了共享和分离的功能。
+参考  https://www.cnblogs.com/ITPower/p/13211490.html
 
 #### 21.Java对象的布局了解过吗？
 
