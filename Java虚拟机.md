@@ -245,8 +245,23 @@ https://blog.csdn.net/xuemengrui12/article/details/82707473
 #### 17.说下有哪些类加载器？
 
 Bootstrap ClassLoader（启动类加载器）
+启动类加载器（bootstrap class loader）:它用来加载 Java 的核心类，是用原生代码来实现的，并不继承自 java.lang.ClassLoader（负责加载$JAVA_HOME中jre/lib/rt.jar里所有的class，由C++实现，不是ClassLoader子类）。由于引导类加载器涉及到虚拟机本地实现细节，开发者无法直接获取到启动类加载器的引用，所以不允许直接通过引用进行操作。
+
 Extention ClassLoader（扩展类加载器）
+它负责加载JRE的扩展目录，lib/ext或者由java.ext.dirs系统属性指定的目录中的JAR包的类。由Java语言实现，父类加载器为null。
+
 App ClassLoader（应用类加载器）
+应用类加载器，它负责在JVM启动时加载来自Java命令的-classpath选项、java.class.path系统属性，或者CLASSPATH换将变量所指定的JAR包和类路径。程序可以通过ClassLoader的静态方法getSystemClassLoader()来获取系统类加载器。如果没有特别指定，则用户自定义的类加载器都以此类加载器作为父加载器。由Java语言实现，父类加载器为ExtClassLoader。
+
+类加载器加载Class大致要经过如下8个步骤：
+检测此Class是否载入过，即在缓冲区中是否有此Class，如果有直接进入第8步，否则进入第2步。
+如果没有父类加载器，则要么Parent是根类加载器，要么本身就是根类加载器，则跳到第4步，如果父类加载器存在，则进入第3步。
+请求使用父类加载器去载入目标类，如果载入成功则跳至第8步，否则接着执行第5步。
+请求使用根类加载器去载入目标类，如果载入成功则跳至第8步，否则跳至第7步。
+当前类加载器尝试寻找Class文件，如果找到则执行第6步，如果找不到则执行第7步。
+从文件中载入Class，成功后跳至第8步。
+抛出ClassNotFountException异常。
+返回对应的java.lang.Class对象。
 
 #### 18.什么是双亲委派机制？
 
