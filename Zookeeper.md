@@ -12,7 +12,7 @@
 * [8.ZooKeeper提供了什么？](#8zookeeper提供了什么)
 * [9.Zookeeper文件系统](#9zookeeper文件系统)
 * [9.Zookeeper数据内存模型和磁盘存储机制](#1Zookeeper数据内存模型和磁盘存储机制)
-* [9.Zookeeper 数据是同步刷盘吗？](#1Zookeeper 数据是同步刷盘吗？)
+* [9.Zookeeper数据是同步刷盘吗？](#1Zookeeper数据是同步刷盘吗?)
 * [10.Zookeeper Watcher 机制](#10zookeeper-watcher-机制)
 * [11.客户端注册Watcher实现](#11客户端注册watcher实现)
 * [12.服务端处理Watcher实现](#12服务端处理watcher实现)
@@ -110,7 +110,7 @@ Zookeeper为了保证高吞吐和低延迟，在内存中维护了这个树状�
 
  参考https://blog.csdn.net/varyall/article/details/79564388
  
-### 9.2Zookeeper 数据是同步刷盘吗？
+### 9.2Zookeeper数据是同步刷盘吗？
 zookeeper在内存中维护着类似于树形文件系统的节点数据模型，其中包含了整棵树的内容，所有的节点路径，节点数据等。代码中使用DataTree的数据结构来保存这些信息，底层是使用一个ConcurrentHashMap键值对结构，既然在内存中有数据必然需要在磁盘上有对应的持久化，类似于redis，zookeeper中也分为事务日志和快照数据。
 
 事务日志
