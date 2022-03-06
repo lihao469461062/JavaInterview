@@ -2,6 +2,7 @@
 
 
 * [1.Zookeeper有哪些节点类型？](#1zookeeper有哪些节点类型)
+* [1.zookeeper缺点？](#zookeeper缺点)
 * [2.了解过Zookeeper的ZAB协议吗？](#2了解过zookeeper的zab协议吗)
 * [3.Zookeeper怎么实现分布式锁？](#3zookeeper怎么实现分布式锁)
 * [4.Zookeeper是怎么保证数据一致性的？](#4zookeeper是怎么保证数据一致性的)
@@ -10,8 +11,8 @@
 * [7.ZooKeeper是什么？](#7zookeeper是什么)
 * [8.ZooKeeper提供了什么？](#8zookeeper提供了什么)
 * [9.Zookeeper文件系统](#9zookeeper文件系统)
-* 9.1Zookeeper数据内存模型和磁盘存储机制
-* 9.1Zookeeper 数据是同步刷盘吗？
+* [9.Zookeeper数据内存模型和磁盘存储机制](#1Zookeeper数据内存模型和磁盘存储机制)
+* [9.Zookeeper 数据是同步刷盘吗？](#1Zookeeper 数据是同步刷盘吗？)
 * [10.Zookeeper Watcher 机制](#10zookeeper-watcher-机制)
 * [11.客户端注册Watcher实现](#11客户端注册watcher实现)
 * [12.服务端处理Watcher实现](#12服务端处理watcher实现)
@@ -46,6 +47,11 @@ PERSISTENT_SEQUENTIAL-持久顺序节点
 
 EPHEMERAL_SEQUENTIAL-临时顺序节点
 基本特性同临时节点，增加了顺序属性，节点名后边会追加一个由父节点维护的自增整型数字。
+
+#### zookeeper缺点
+
+一个明显的缺陷是随着规模增大 需要同步到更多机器 tps 会下降 ，那么这就意味zk的集群不能很大，这就陷入了一个死循环，导致集群整体qps tps 都是有上限的大概5w到顶啦。zk是java系分布式系统的必备，但不是kv存储哦，在metaq，storm的早期版本都把一大堆东西往zk里塞，最后还是老老实实的改造。所以别让他做一些不该他做的事情，比如心跳，metrics 别往这发啦。就老实做个配置管理 推送 和选主吧。
+
 
 #### 2.了解过Zookeeper的ZAB协议吗？
 
