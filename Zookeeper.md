@@ -98,6 +98,14 @@ Zookeeper保证了如下分布式一致性特性：
 Zookeeper提供一个多层级的节点命名空间（节点称为znode）。与文件系统不同的是，这些节点都可以设置关联的数据，而文件系统中只有文件节点可以存放数据而目录节点不行。
 Zookeeper为了保证高吞吐和低延迟，在内存中维护了这个树状的目录结构，这种特性使得Zookeeper不能用于存放大量的数据，每个节点的存放数据上限为1M。
 
+### Zookeeper数据内存模型和磁盘存储机制
+
+ 参考https://blog.csdn.net/varyall/article/details/79564388
+ 
+### Zookeeper 数据是同步刷盘吗？
+
+待完成
+
 #### 10.Zookeeper Watcher 机制
 
 Zookeeper允许客户端向服务端的某个Znode注册一个Watcher监听，当服务端的一些指定事件触发了这个Watcher，服务端会向指定客户端发送一个事件通知来实现分布式的通知功能，然后客户端根据Watcher通知状态和事件类型做出业务上的改变。
