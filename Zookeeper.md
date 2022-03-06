@@ -10,6 +10,8 @@
 * [7.ZooKeeper是什么？](#7zookeeper是什么)
 * [8.ZooKeeper提供了什么？](#8zookeeper提供了什么)
 * [9.Zookeeper文件系统](#9zookeeper文件系统)
+* 9.1Zookeeper数据内存模型和磁盘存储机制
+* 9.1Zookeeper 数据是同步刷盘吗？
 * [10.Zookeeper Watcher 机制](#10zookeeper-watcher-机制)
 * [11.客户端注册Watcher实现](#11客户端注册watcher实现)
 * [12.服务端处理Watcher实现](#12服务端处理watcher实现)
