@@ -98,11 +98,11 @@ Zookeeper保证了如下分布式一致性特性：
 Zookeeper提供一个多层级的节点命名空间（节点称为znode）。与文件系统不同的是，这些节点都可以设置关联的数据，而文件系统中只有文件节点可以存放数据而目录节点不行。
 Zookeeper为了保证高吞吐和低延迟，在内存中维护了这个树状的目录结构，这种特性使得Zookeeper不能用于存放大量的数据，每个节点的存放数据上限为1M。
 
-### Zookeeper数据内存模型和磁盘存储机制
+### 9.1Zookeeper数据内存模型和磁盘存储机制
 
  参考https://blog.csdn.net/varyall/article/details/79564388
  
-### Zookeeper 数据是同步刷盘吗？
+### 9.2Zookeeper 数据是同步刷盘吗？
 zookeeper在内存中维护着类似于树形文件系统的节点数据模型，其中包含了整棵树的内容，所有的节点路径，节点数据等。代码中使用DataTree的数据结构来保存这些信息，底层是使用一个ConcurrentHashMap键值对结构，既然在内存中有数据必然需要在磁盘上有对应的持久化，类似于redis，zookeeper中也分为事务日志和快照数据。
 
 事务日志
