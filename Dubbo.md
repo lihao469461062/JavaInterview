@@ -167,7 +167,7 @@ Dubbo 必须依赖 JDK，其他为可选。
 
 Dubbo 会在 Spring 实例化完 bean 之后，在刷新容器最后一步发布 ContextRefreshEvent 事件的时候，通知实现了 ApplicationListener 的 ServiceBean 类进行回调 onApplicationEvent 事件方法，Dubbo 会在这个方法中调用 ServiceBean 父类 ServiceConfig 的 export 方法，而该方法真正实现了服务的（异步或者非异步）发布。
 
-#### 28.说说Dubbo怎么做优雅上下线
+#### 28.说说Dubbo怎么做优雅上下线。
 
 
 #### 参考资料
