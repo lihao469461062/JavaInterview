@@ -27,6 +27,7 @@
 * [25.Dubbo必须依赖的包有哪些？](#25dubbo必须依赖的包有哪些)
 * [26.Dubbo的管理控制台能做什么？](#26dubbo的管理控制台能做什么)
 * [27.说说 Dubbo 服务暴露的过程。](#27说说-dubbo-服务暴露的过程)
+* [28.说说Dubbo怎么做优雅上下线。](#27说说Dubbo怎么做优雅上下线)
 
 #### 1.Dubbo是什么？
 
@@ -165,6 +166,8 @@ Dubbo 必须依赖 JDK，其他为可选。
 #### 27.说说 Dubbo 服务暴露的过程。
 
 Dubbo 会在 Spring 实例化完 bean 之后，在刷新容器最后一步发布 ContextRefreshEvent 事件的时候，通知实现了 ApplicationListener 的 ServiceBean 类进行回调 onApplicationEvent 事件方法，Dubbo 会在这个方法中调用 ServiceBean 父类 ServiceConfig 的 export 方法，而该方法真正实现了服务的（异步或者非异步）发布。
+
+#### 28.说说Dubbo怎么做优雅上下线
 
 
 #### 参考资料
