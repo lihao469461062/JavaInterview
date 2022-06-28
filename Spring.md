@@ -249,6 +249,8 @@ PROPAGATION_NESTED： 如果当前存在事务，则创建一个事务作为当�
 
 ### @transanctional失效场景
 
+https://www.jb51.net/article/233682.htm
+
 #### 20.Spring 事务底层原理
 
 划分处理单元——IoC
