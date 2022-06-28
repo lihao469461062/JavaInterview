@@ -21,7 +21,7 @@
 * [18.Spring事务中的隔离级别有哪几种？](#18spring事务中的隔离级别有哪几种)
 * [19.Spring事务中有哪几种事务传播行为？](#19spring事务中有哪几种事务传播行为)
 * [20.Spring 事务底层原理](#20spring-事务底层原理)
-* [20.@transanctional失效场景](#20@transanctional失效场景)
+* [@transanctional失效场景](#@transanctional失效场景)
 * [21.BeanFactory和ApplicationContext有什么区别？](#21beanfactory和applicationcontext有什么区别)
 * [22.Resource 是如何被查找、加载的？](#22resource-是如何被查找加载的)
 * [23.解释自动装配的各种模式？](#23解释自动装配的各种模式)
@@ -247,7 +247,7 @@ PROPAGATION_NEVER： 以非事务方式运行，如果当前存在事务，则�
 其他情况：
 PROPAGATION_NESTED： 如果当前存在事务，则创建一个事务作为当前事务的嵌套事务来运行；如果当前没有事务，则该取值等价于PROPAGATION_REQUIRED。
 
-### 20.@transanctional失效场景
+### @transanctional失效场景
 
 #### 20.Spring 事务底层原理
 
