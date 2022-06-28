@@ -144,17 +144,29 @@ Spring AOP已经集成了AspectJ，AspectJ应该算得上是Java生态系统中�
 #### 12.Spring中的bean生命周期了解过吗？
 
 1.Bean容器找到配置文件中Spring Bean的定义。
+
 2.Bean容器利用Java Reflection API创建一个Bean的实例。
+
 3.如果涉及到一些属性值，利用set()方法设置一些属性值。
+
 4.如果Bean实现了BeanNameAware接口，调用setBeanName()方法，传入Bean的名字。
+
 5.如果Bean实现了BeanClassLoaderAware接口，调用setBeanClassLoader()方法，传入ClassLoader对象的实例。
+
 6.如果Bean实现了BeanFactoryAware接口，调用setBeanClassFacotory()方法，传入ClassLoader对象的实例。
+
 7.与上面的类似，如果实现了其他*Aware接口，就调用相应的方法。
+
 8.如果有和加载这个Bean的Spring容器相关的BeanPostProcessor对象，执行postProcessBeforeInitialization()方法。
+
 9.如果Bean实现了InitializingBean接口，执行afeterPropertiesSet()方法。
+
 10.如果Bean在配置文件中的定义包含init-method属性，执行指定的方法。
+
 11.如果有和加载这个Bean的Spring容器相关的BeanPostProcess对象，执行postProcessAfterInitialization()方法。
+
 12.当要销毁Bean的时候，如果Bean实现了DisposableBean接口，执行destroy()方法。
+
 13.当要销毁Bean的时候，如果Bean在配置文件中的定义包含destroy-method属性，执行指定的方法。
 
 #### 13.Spring MVC的工作原理了解嘛？
