@@ -70,7 +70,10 @@ ZAB协议包括两种基本的模式：崩溃恢复和消息广播。
 
 #### 4.Zookeeper是怎么保证数据一致性的？
 
-详见：https://blog.csdn.net/liuchang19950703/article/details/111406622
+详见：
+1. https://blog.csdn.net/liuchang19950703/article/details/111406622
+
+2. http://www.360doc.com/content/21/0106/09/412471_955432948.shtml
 
 #### 5.Zookeeper Leader选举过程是怎样的？
 
@@ -306,6 +309,8 @@ ZAB协议中，每个Proposal中都包含一个 epoch 值来代表当前的Leade
 
 不同点：
 ZAB用来构建高可用的分布式数据主备系统（Zookeeper），Paxos是用来构建分布式一致性状态机系统。
+
+参考：http://www.360doc.com/content/21/0106/09/412471_955432948.shtml
 
 #### 25.Zookeeper的典型应用场景
 
